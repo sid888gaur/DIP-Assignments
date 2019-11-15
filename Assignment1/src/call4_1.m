@@ -1,0 +1,31 @@
+clc;clear all;
+im = imread('lena.jpg');
+im = rgb2gray(im);
+a1 = BitQuantizeImage(im,1);
+a2 = BitQuantizeImage(im,2);
+a3 = BitQuantizeImage(im,3);
+a4 = BitQuantizeImage(im,4);
+a5 = BitQuantizeImage(im,5);
+a6 = BitQuantizeImage(im,6);
+a7 = BitQuantizeImage(im,7);
+a8 = BitQuantizeImage(im,8);
+
+o1 = negative(a1,255);
+o2 = negative(a2,255);
+o3 = negative(a3,255);
+o4 = negative(a4,255);
+o5 = negative(a5,255);
+o6 = negative(a6,255);
+o7 = negative(a7,255);
+o8 = negative(a8,255);
+
+%figure;
+subplot(331);imshow(im);title('original');
+subplot(332);imshow(o1);title('1 bit negative');
+subplot(333);imshow(o2);title('2 bit negative');
+subplot(334);imshow(o3);title('3 bit negative');
+subplot(335);imshow(o4);title('4 bit negative');
+subplot(336);imshow(o5);title('5 bit negative');
+subplot(337);imshow(o6);title('6 bit negative');
+subplot(338);imshow(o7);title('7 bit negative');
+subplot(339);imshow(o8);title('8 bit negative');

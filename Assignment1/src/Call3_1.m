@@ -1,0 +1,10 @@
+clc;clear all;
+o1 = BitQuantizeImage('quantize.jpg',4);
+o2 = BitQuantizeImage('lena.jpg',2);
+o3 = BitQuantizeImage('quantize.jpg',1);
+im = imread('quantize.jpg');
+figure;
+subplot(221);imshow(im);title('original');
+subplot(222);imshow(o1);title('4 bit quantize');
+subplot(223);imshow(o2);title('2 bit quantize');
+subplot(224);imshow(o3);title('1 bit quantize');
