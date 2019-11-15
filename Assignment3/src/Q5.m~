@@ -1,0 +1,17 @@
+clc;close all;
+im = imread('lena.jpg');
+im = rgb2gray(im);
+m = size(im,1);n=size(im,2);
+h = [0 1 0;1 10 1;0 1 0];
+im_fft = fftshift(fft2(double(im),m,n));
+h_fft = fftshift(fft2(double(h),m,n));
+res_fft = h_fft.*im_fft;
+res = ifft2(ifftshift(res_fft));
+
+figure;
+subplot(121);imshowpair(im,res,'montage');title('Original');
+
+figure;
+subplot(121);imshow(res,[]);title('Resultant');
+subplot(122);imshow(log(abs(im_fft)),[]);title('Original FFT');
+subplot(122);imshow(log(abs(h_fft)),[]);title('Resultant FFT');

@@ -1,0 +1,10 @@
+clc;close all;
+im = imread('bricks.jpg'); im = rgb2gray(im);
+[m,n]=size(im);
+
+s1 = SmpleRate(im,1,1);
+s1 = SmpleRate(im,1,1);
+s1 = SmpleRate(im,1,1);
+s1 = SmpleRate(im,1,1);
+s1 = SmpleRate(im,1,1);
+s1 = SmpleRate(im,1,1);
